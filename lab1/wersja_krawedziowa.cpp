@@ -45,12 +45,17 @@ int main()
     }
     cout<<endl;
 
-    for(int i = 0; i < lKrawedzi - 1; ++i)
+    for(int j = 0; j < lWierzcholkow - 1; ++j)
     {
-        if(wyniki[krawedzie[i].koniec] > krawedzie[i].poczatek + krawedzie[i].waga)
+        for(int i = 0; i < lKrawedzi; ++i)
         {
-            wyniki[krawedzie[i].koniec] = wyniki[krawedzie[i].poczatek] + krawedzie[i].waga;
-            poprzedniki[krawedzie[i].koniec] = krawedzie[i].poczatek;
+            int poczatek = krawedzie[i].poczatek;
+            int koniec = krawedzie[i].koniec;
+            if(wyniki[koniec] > wyniki[poczatek] + krawedzie[i].waga)
+            {
+                wyniki[koniec] = wyniki[poczatek] + krawedzie[i].waga;
+                poprzedniki[koniec] = poczatek;
+            }
         }
     }
 

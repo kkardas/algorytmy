@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main2() {
+int main() {
     int lWierzcholkow;
 
     ifstream plik("graf.txt");
@@ -62,6 +62,4 @@ int main2() {
         cout << wyniki[k] << " ";
     }
     cout << endl;
-
-    main2();
 }
